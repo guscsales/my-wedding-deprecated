@@ -23,7 +23,7 @@ const {
 			database: DATABASE_SCHEMA,
 			entities: [`${__dirname}/entities/*{.ts,.js}`],
 			synchronize: true,
-			logging: true,
+			logging: process.env.PROFILE !== 'prod',
 			migrations: [`${__dirname}/migrations/*.ts`]
 		}),
 		ServeStaticModule.forRoot({

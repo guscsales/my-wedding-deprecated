@@ -9,23 +9,23 @@ import {
 @Entity({ name: 'guest' })
 export class Guest {
 	@PrimaryColumn()
-	id: string;
-
-	@Column({ length: 500 })
-	fullName: string;
+	id?: string;
 
 	@Column()
-	guests: number;
+	names: string;
+
+	@Column({ default: false })
+	confirmed?: boolean;
 
 	@CreateDateColumn({
 		precision: null,
 		default: () => 'CURRENT_TIMESTAMP'
 	})
-	createdAt: Date;
+	createdAt?: Date;
 
 	@UpdateDateColumn({
 		precision: null,
 		default: () => 'CURRENT_TIMESTAMP'
 	})
-	updatedAt: Date;
+	updatedAt?: Date;
 }
