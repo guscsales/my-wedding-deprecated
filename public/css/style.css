@@ -453,7 +453,6 @@ a:focus {
   border-top: 2px solid rgba(94, 154, 142, 0.1);
   border-bottom: 2px solid rgba(94, 154, 142, 0.1);
   display: inline-block;
-  text-transform: capitalize;
   letter-spacing: 3px;
 }
 
@@ -2049,7 +2048,6 @@ a:focus {
   color: #fff;
   margin: 0 0 0.3em;
   padding: 0 250px;
-  text-transform: capitalize;
   letter-spacing: 5px;
 }
 
@@ -3000,7 +2998,9 @@ a:focus {
 @media screen and (min-width: 992px) {
   .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(4),
   .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(5),
-  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(6) {
+  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(6),
+  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(7),
+  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(8){
     margin-top: 30px;
   }
 }
@@ -3009,7 +3009,9 @@ a:focus {
   .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(3),
   .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(4),
   .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(5),
-  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(6) {
+  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(6),
+  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(7),
+  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(8){
     margin-top: 30px;
   }
 }
@@ -3018,7 +3020,9 @@ a:focus {
   .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(3),
   .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(4),
   .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(5),
-  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(6) {
+  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(6),
+  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(7),
+  .inportant-people-section .tab-content .grid-wrapper > .grid:nth-child(8){
     margin-top: 0;
   }
   .inportant-people-section .tab-content .grid-wrapper > .grid + .grid {
