@@ -2,7 +2,13 @@
 #0.5	footer
 --------------------------------------------------------------*/
 .site-footer {
-	@include background-style("../images/footer-bg.jpg", center center, cover, no-repeat, local);
+	@include background-style(
+		'../images/footer-bg.jpg',
+		center center,
+		cover,
+		no-repeat,
+		local
+	);
 	text-align: center;
 	color: $white;
 	padding: 160px 0;
@@ -21,7 +27,7 @@
 	}
 
 	&:before {
-		content: "";
+		content: '';
 		@include overlay(transparentize($black, 0.4));
 	}
 
@@ -32,7 +38,6 @@
 		color: $white;
 		margin: 0 0 0.3em;
 		padding: 0 250px;
-		text-transform: capitalize;
 		letter-spacing: 5px;
 
 		@include media-query(1199px) {
@@ -69,17 +74,17 @@
 
 		a {
 			display: inline-block;
-		    background: $white;
-		    width: 50px;
-		    height: 50px;
-		    @include rounded-border();
+			background: $white;
+			width: 50px;
+			height: 50px;
+			@include rounded-border();
 
-		    span {
-		    	position: absolute;
-		    	left: 0;
-		    	-webkit-animation: pointerMoving 1.3s infinite;
-		    	animation: pointerMoving 1.3s infinite;
-		    }
+			span {
+				position: absolute;
+				left: 0;
+				-webkit-animation: pointerMoving 1.3s infinite;
+				animation: pointerMoving 1.3s infinite;
+			}
 		}
 
 		.fi {

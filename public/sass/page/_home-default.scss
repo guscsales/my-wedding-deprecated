@@ -86,7 +86,7 @@
 			}
 
 			&:before {
-				content: "";
+				content: '';
 				background-color: $black;
 				width: 15px;
 				height: 1px;
@@ -166,15 +166,14 @@
 	}
 }
 
-
 /*--------------------------------------------------------------
 #0.7	count-down-section 
 --------------------------------------------------------------*/
 .count-down-section {
 	position: relative;
-	
+
 	&:before {
-		content: "";
+		content: '';
 		@include overlay(transparentize($black, 0.4));
 	}
 
@@ -278,17 +277,15 @@
 	}
 }
 
-
 /*--------------------------------------------------------------
 #0.8	story-section
 --------------------------------------------------------------*/
 .story-section {
-
 	.story-timeline {
 		position: relative;
 
 		&:after {
-			content: "";
+			content: '';
 			background: transparentize($theme-primary-color, 0.9);
 			width: 2px;
 			height: 100%;
@@ -328,7 +325,7 @@
 
 	.story-timeline > .row > .col:first-child {
 		padding: 0 45px 0 100px;
-		
+
 		@include media-query(1199px) {
 			padding: 0 45px 0 70px;
 		}
@@ -340,7 +337,7 @@
 
 	.story-timeline > .row > .col:last-child {
 		padding: 0 100px 0 45px;
-		
+
 		@include media-query(1199px) {
 			padding: 0 70px 0 45px;
 		}
@@ -379,10 +376,10 @@
 			height: 43px;
 			line-height: 41px;
 			text-align: center;
-			border: 2px solid transparentize($theme-primary-color, 0.5);;
+			border: 2px solid transparentize($theme-primary-color, 0.5);
 			position: absolute;
 			left: -22px;
-			top: -22px;	
+			top: -22px;
 			@include rounded-border();
 			z-index: 10;
 
@@ -462,7 +459,6 @@
 	}
 }
 
-
 /*--------------------------------------------------------------
 #0.9	cta
 --------------------------------------------------------------*/
@@ -471,7 +467,7 @@
 	text-align: center;
 
 	&:before {
-		content: "";
+		content: '';
 		@include overlay(transparentize($black, 0.45));
 	}
 
@@ -517,12 +513,10 @@
 	}
 }
 
-
 /*--------------------------------------------------------------
 #1.0	events-section
 --------------------------------------------------------------*/
 .events-section {
-
 	.event {
 		overflow: hidden;
 	}
@@ -552,7 +546,7 @@
 			width: 60%;
 			float: left;
 			padding-left: 35px;
-			
+
 			@include media-query(991px) {
 				width: 100%;
 				float: none;
@@ -615,7 +609,6 @@
 		color: darken($theme-primary-color, 10%);
 	}
 }
-
 
 /*--------------------------------------------------------------
 #1.1	inportant-people-section
@@ -724,16 +717,16 @@
 
 	.grid .img-holder {
 		overflow: hidden;
-		
+
 		img {
 			@include transition-time(0.5s);
 			-webkit-filter: grayscale(50%);
 			-moz-filter: grayscale(50%);
 			-o-filter: grayscale(50%);
 			-ms-filter: grayscale(50%);
-		    filter: grayscale(50%);
+			filter: grayscale(50%);
 		}
-	} 
+	}
 
 	.grid:hover img {
 		-webkit-transform: scale(1.2) rotate(5deg);
@@ -742,7 +735,7 @@
 		-moz-filter: grayscale(0);
 		-o-filter: grayscale(0);
 		-ms-filter: grayscale(0);
-	    filter: grayscale(0);
+		filter: grayscale(0);
 	}
 
 	.grid .details {
@@ -784,7 +777,6 @@
 		font-size: 16px;
 		font-size: calc-rem-value(16);
 		color: #969494;
-		text-transform: capitalize;
 		display: block;
 	}
 
@@ -818,12 +810,10 @@
 	}
 }
 
-
 /*--------------------------------------------------------------
 #1.2	gallery-section
 --------------------------------------------------------------*/
 .gallery-section {
-
 	/*** filter ***/
 	.gallery-filters {
 		text-align: left;
@@ -831,7 +821,7 @@
 
 		@include media-query(767px) {
 			margin-bottom: 30px;
-		}	
+		}
 
 		ul {
 			overflow: hidden;
@@ -854,7 +844,7 @@
 			@include media-query(767px) {
 				font-size: 15px;
 				font-size: calc-rem-value(15);
-			}	
+			}
 		}
 
 		ul .current {
@@ -899,18 +889,18 @@
 		-moz-filter: grayscale(60%);
 		-o-filter: grayscale(60%);
 		-ms-filter: grayscale(60%);
-	    filter: grayscale(60%);
-		-webkit-transition: all .3s ease;
-		-moz-transition: all .3s ease;
-		transition: all .3s ease;
+		filter: grayscale(60%);
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		transition: all 0.3s ease;
 
 		@include media-query(767px) {
 			-webkit-filter: grayscale(0);
 			-moz-filter: grayscale(0);
 			-o-filter: grayscale(0);
 			-ms-filter: grayscale(0);
-		    filter: grayscale(0);
-		}		
+			filter: grayscale(0);
+		}
 	}
 
 	.grid:hover img {
@@ -918,7 +908,7 @@
 		-moz-filter: grayscale(0);
 		-o-filter: grayscale(0);
 		-ms-filter: grayscale(0);
-	    filter: grayscale(0);
+		filter: grayscale(0);
 	}
 
 	.video-play-btn {
@@ -933,8 +923,8 @@
 			font-size: calc-rem-value(20);
 			background: transparentize($theme-primary-color, 0.1);
 			border: 3px solid darken($theme-primary-color, 1%);
-			color: $white;	
-			text-align: center;		
+			color: $white;
+			text-align: center;
 			position: absolute;
 			left: 50%;
 			top: 50%;
@@ -949,7 +939,6 @@
 	}
 }
 
-
 /*--------------------------------------------------------------
 #1.3	rsvp-section
 --------------------------------------------------------------*/
@@ -958,7 +947,7 @@
 	//text-align: center;
 
 	&:after {
-		content: "";
+		content: '';
 		@include overlay(transparentize($black, 0.4));
 	}
 
@@ -1005,7 +994,8 @@
 
 		select {
 			color: #2a2a2a;
-			background: #e6eceb url(../images/select-icon.png) no-repeat calc(100% - 15px) center;
+			background: #e6eceb url(../images/select-icon.png) no-repeat
+				calc(100% - 15px) center;
 		}
 
 		textarea {
@@ -1049,7 +1039,6 @@
 		}
 	}
 }
-
 
 /*--------------------------------------------------------------
 #1.4	getting-there-section
@@ -1116,7 +1105,6 @@
 	}
 }
 
-
 /*--------------------------------------------------------------
 #1.5	gift-registration-section
 --------------------------------------------------------------*/
@@ -1124,22 +1112,33 @@
 	text-align: center;
 
 	.gif-registration-slider {
+		width: 550px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 35px;
+		margin: 0 auto;
 		margin-top: 55px;
+		row-gap: 0;
 
 		@include media-query(767px) {
-			margin-top: 45px;
+			width: 100%;
+			grid-template-columns: 1fr;
+			row-gap: 15px;
 		}
 	}
 
 	.gif-registration-slider .register {
-		border: 1px solid #111;
+		border: 2px solid #c7c7c7;
 		padding: 20px;
+		transition: all 200ms linear;
 
 		img {
 			width: auto;
 			max-width: 100%;
 		}
+
+		&:hover {
+			background-color: #efefef;
+		}
 	}
 }
-
-

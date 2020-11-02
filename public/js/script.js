@@ -193,12 +193,12 @@
 	function heroSlider() {
 		if ($('.hero-slider').length) {
 			$('.hero-slider').slick({
-				arrows: true,
-				prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-				nextArrow: '<button type="button" class="slick-next">Next</button>',
-				dots: true,
+				arrows: false,
+				dots: false,
 				fade: true,
-				cssEase: 'linear'
+				speed: 1000,
+				autoplay: true,
+				autoplaySpeed: 3000
 			});
 		}
 	}
@@ -504,27 +504,27 @@
         = GIFT REGISTRATION SLIDER
     -------------------------------------------*/
 	if ($('.gif-registration-slider').length) {
-		$('.gif-registration-slider').owlCarousel({
-			items: 3,
-			dots: false,
-			autoplay: true,
-			autoplayTimeout: 3000,
-			smartSpeed: 1000,
-			loop: true,
-			margin: 20,
-			stagePadding: 10,
-			responsive: {
-				0: {
-					items: 1
-				},
-				480: {
-					items: 2
-				},
-				768: {
-					items: 3
-				}
-			}
-		});
+		// $('.gif-registration-slider').owlCarousel({
+		// 	items: 2,
+		// 	dots: false,
+		// 	autoplay: true,
+		// 	autoplayTimeout: 3000,
+		// 	smartSpeed: 1000,
+		// 	loop: true,
+		// 	margin: 20,
+		// 	stagePadding: 10,
+		// 	responsive: {
+		// 		0: {
+		// 			items: 1
+		// 		},
+		// 		480: {
+		// 			items: 2
+		// 		},
+		// 		768: {
+		// 			items: 3
+		// 		}
+		// 	}
+		// });
 	}
 
 	/*------------------------------------------
