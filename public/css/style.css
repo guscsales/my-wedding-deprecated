@@ -30,6 +30,12 @@ URL:            http://themeforest.net/user/themexriver
 	Fonts
 ----------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700|Great+Vibes");
+@font-face {
+  font-family: "Dhanikans Signature 2";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Dhanikans Signature 2"), local("DhanikansSignature2-Regular"), url("../../fonts/dhanikans-signature-2-regular.ttf") format("truetype");
+}
 /*--------------------------------------------------------------
 #0.1    Theme Reset Style
 --------------------------------------------------------------*/
@@ -1330,7 +1336,7 @@ a:focus {
   }
 }
 .header-style-1 .couple-logo h1, .header-style-2 .couple-logo h1 {
-  font-family: "Great Vibes", cursive;
+  font-family: "Dhanikans Signature 2", cursive;
   font-size: 35px;
   font-size: 1.9444444444rem;
   margin: 0;
@@ -1572,7 +1578,8 @@ a:focus {
   vertical-align: middle;
 }
 .hero .wedding-announcement .couple-name-merried-text h2 {
-  font-family: "Great Vibes", cursive;
+  user-select: none;
+  font-family: "Dhanikans Signature 2", cursive;
   font-size: 90px;
   font-size: 5rem;
   color: #fff;
@@ -2061,7 +2068,7 @@ a:focus {
   }
 }
 .wedding-couple-section .details .signature {
-  font-family: "Great Vibes", cursive;
+  font-family: "Dhanikans Signature 2", cursive;
   font-size: 28px;
   font-size: 1.5555555556rem;
   display: block;
