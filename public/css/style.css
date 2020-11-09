@@ -3137,6 +3137,9 @@ a:focus {
     padding-left: 75px;
   }
 }
+.getting-there-section a {
+  color: #fff;
+}
 
 /*--------------------------------------------------------------
 #1.5	gift-registration-section

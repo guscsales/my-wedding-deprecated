@@ -819,4 +819,6 @@
 			}, 200)
 		);
 	});
+
+	$('[data-toggle="tooltip"]').tooltip();
 })(window.jQuery);
