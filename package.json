@@ -19,7 +19,8 @@
 		"test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
 		"test:e2e": "jest --config ./test/jest-e2e.json",
 		"migration:run": "ts-node ./node_modules/typeorm/cli migration:run -c=migration_local",
-		"migration:create": "ts-node ./node_modules/typeorm/cli migration:create -d=src/migrations"
+		"migration:create": "ts-node ./node_modules/typeorm/cli migration:create -d=src/migrations",
+		"compile-sass": "sass --watch ./public/sass/style.scss ./public/css/style.css"
 	},
 	"dependencies": {
 		"@nestjs/common": "^6.11.8",
@@ -60,6 +61,7 @@
 		"dotenv": "^8.2.0",
 		"jest": "25.1.0",
 		"prettier": "1.19.1",
+		"sass": "^1.29.0",
 		"supertest": "4.0.2",
 		"ts-jest": "25.2.1",
 		"ts-node": "8.6.2",

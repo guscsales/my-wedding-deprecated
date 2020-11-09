@@ -160,7 +160,7 @@ a:focus {
         width: 100%;
         color: $white;
         padding: 5px 10px;
-        font-size: 16px;
+        font-size: 20px;
         text-align: center;
         display: none;
 
@@ -170,12 +170,12 @@ a:focus {
     }
 
     #success {
-        background-color: green;
+        background-color: #218621;
         margin-bottom: 5px;
     }
 
     #error {
-        background-color: red;
+        background-color: #a90000;
     }
 }
 

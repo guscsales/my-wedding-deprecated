@@ -531,55 +531,123 @@
         = RSVP FORM SUBMISSION
     -------------------------------------------*/
 	if ($('#rsvp-form').length) {
+		const apiKey = '91539d04baea4cfd80947c35f3bf34f4';
+
 		$('#rsvp-form').validate({
 			rules: {
-				name: {
+				code: {
 					required: true,
-					minlength: 2
-				},
-				email: 'required',
-
-				guest: {
-					required: true
-				},
-
-				events: {
-					required: true
+					maxlength: 5
 				}
 			},
 
 			messages: {
-				name: 'Please enter your name',
-				email: 'Please enter your email',
-				guest: 'Select your number of guest',
-				events: 'Select your event list'
+				code: 'Por favor, digite o código'
 			},
 
 			submitHandler: function(form) {
-				$('#loader').css('display', 'inline-block');
-				$.ajax({
-					type: 'POST',
-					url: 'mail.php',
-					data: $(form).serialize(),
-					success: function() {
-						$('#loader').hide();
-						$('#success').slideDown('slow');
-						setTimeout(function() {
-							$('#success').slideUp('slow');
-						}, 3000);
-						form.reset();
-					},
-					error: function() {
-						$('#loader').hide();
-						$('#error').slideDown('slow');
-						setTimeout(function() {
-							$('#error').slideUp('slow');
-						}, 3000);
-					}
-				});
+				const guests = $('#guests-names').text();
+
+				if (confirm('Deseja confirmar a presença para ' + guests)) {
+					$('#loader').css('display', 'inline-block');
+					$('#guests')
+						.stop()
+						.slideUp('slow');
+					const code = $('.confirm-presence-input').val();
+
+					$.ajax({
+						type: 'PATCH',
+						url: '/api/guests/confirm-presence/' + code,
+						headers: {
+							'x-api-key': apiKey
+						},
+						success: function() {
+							$('.confirm-presence-input').val('');
+							$('#guests')
+								.stop()
+								.slideUp('fast');
+							$('.submit-btn').hide();
+							$('#loader').hide();
+							$('#success')
+								.html(
+									'A presença para <strong>' +
+										guests +
+										'</strong> foi confirmada, obrigado!'
+								)
+								.stop()
+								.slideDown('slow');
+							form.reset();
+						},
+						error: function() {
+							$('#loader').hide();
+							$('#error')
+								.stop()
+								.slideDown('slow');
+							setTimeout(function() {
+								$('#error')
+									.stop()
+									.slideUp('slow');
+							}, 3000);
+						}
+					});
+				}
+
 				return false; // required to block normal submit since you used ajax
 			}
 		});
+
+		const $confirmPresenceInput = $('.confirm-presence-input');
+
+		if ($confirmPresenceInput.length) {
+			$confirmPresenceInput.mask('GH000', {
+				placeholder: 'Exemplo: GH000'
+			});
+
+			$confirmPresenceInput.on('keyup', function() {
+				const value = $(this).val();
+
+				$('#success, #error, #guests')
+					.stop()
+					.slideUp('fast');
+				$('.submit-btn').hide();
+
+				if (value.length === 5) {
+					$.ajax({
+						type: 'GET',
+						url: '/api/guests/' + value,
+						headers: {
+							'x-api-key': apiKey
+						},
+						success: function(data) {
+							if (data.guest.confirmed) {
+								$('#success')
+									.html(data.message)
+									.stop()
+									.slideDown('slow');
+							} else {
+								const names = data.guest.names.split(',');
+								const lastName = names.pop();
+								const result = names.join(', ') + ' e ' + lastName;
+
+								$('#guests-names').html(result);
+
+								$('#guests')
+									.stop()
+									.slideDown('slow');
+								$('.submit-btn').show();
+							}
+						},
+						error: function(e) {
+							$('#loader').hide();
+							$('#error span').html(e.responseJSON.message);
+							$('#error')
+								.stop()
+								.slideDown('slow');
+						}
+					});
+				}
+			});
+		}
 	}
 
 	/*------------------------------------------

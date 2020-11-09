@@ -14,7 +14,7 @@
         }
     }
 
-    @include placeholder-style(lighten($black, 35%));
+    @include placeholder-style(lighten($black, 90%));
 
     select {
         background: url(../images/select-icon.png) no-repeat right center;

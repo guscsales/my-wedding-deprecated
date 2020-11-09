@@ -7,12 +7,20 @@ export class GuestController {
 
 	@Get(':id')
 	async getById(@Param() { id }) {
-		return await this.guestService.getById(id);
+		try {
+			return await this.guestService.getById(id);
+		} catch (e) {
+			throw e;
+		}
 	}
 
 	@Patch('confirm-presence/:id')
 	async confirmPresence(@Param() { id }) {
-		return await this.guestService.confirmPresence(id);
+		try {
+			return await this.guestService.confirmPresence(id);
+		} catch (e) {
+			throw e;
+		}
 	}
 
 	@Post('create-all-guests')

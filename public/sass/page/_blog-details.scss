@@ -16,7 +16,7 @@
 			background-color: #f1f1f1;
 			font-style: italic;
 			padding: 25px;
-			margin-bottom: 35px;
+			margin-bottom: 0;
 
 			@include media-query(991px) {
 				font-size: 16px;

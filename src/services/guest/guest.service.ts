@@ -43,13 +43,18 @@ export class GuestService {
 			const guest = await this.guestRepository.findOne(id);
 
 			if (!guest) {
-				throw new NotFoundException('Convidado não encontrado');
+				const e = new NotFoundException('Convidado não encontrado.');
+				this.logger.error(e, e.stack);
+				throw e;
 			}
 
 			if (guest.confirmed) {
-				throw new ForbiddenException(
-					'Obrigado! Sua presença já foi confirmada!'
-				);
+				return {
+					statusCode: 201,
+					message: `${
+						guest.names.split(',')[0]
+					}, todos os convidados para o seu código já estão confirmados, obrigado!`
+				};
 			}
 
 			await this.guestRepository.update(id, { confirmed: true });
@@ -63,17 +68,21 @@ export class GuestService {
 	}
 
 	async getById(id: string) {
-		try {
-			const guest = await this.guestRepository.findOne(id);
+		const guest = await this.guestRepository.findOne(id);
+		let message = '';
 
-			if (!guest) {
-				throw new NotFoundException('Código do convidado inválido');
-			}
-
-			return { statusCode: 201, guest };
-		} catch ({ message: { statusCode, message }, ...e }) {
-			this.logger.error(statusCode, e);
-			return { statusCode, message, guest: null };
+		if (!guest) {
+			const e = new NotFoundException('Código do convidado inválido.');
+			this.logger.error(e, e.stack);
+			throw e;
 		}
+
+		if (guest.confirmed) {
+			message = `${
+				guest.names.split(',')[0]
+			}, todos os convidados para o seu código já estão confirmados, obrigado!`;
+		}
+
+		return { statusCode: 201, guest, message };
 	}
 }

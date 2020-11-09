@@ -962,7 +962,7 @@
 	}
 
 	.form {
-		@include placeholder-style(#2a2a2a, 18px, normal);
+		@include placeholder-style(#989898, 18px, normal);
 
 		.col {
 			margin-bottom: 25px;
@@ -1036,6 +1036,12 @@
 
 		.success-error-message {
 			margin-bottom: 0;
+
+			a {
+				color: #fff;
+				text-decoration: underline;
+				font-weight: bold;
+			}
 		}
 	}
 }
@@ -1141,4 +1147,8 @@
 			background-color: #efefef;
 		}
 	}
+}
+
+.confirm-presence-input {
+	text-transform: uppercase;
 }
