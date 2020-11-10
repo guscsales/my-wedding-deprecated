@@ -7,8 +7,8 @@
 	"scripts": {
 		"build": "PROFILE=prod rimraf dist && tsc -p tsconfig.build.json",
 		"format": "prettier --write \"src/**/*.ts\"",
-		"prestart": "gulp",
-		"start": "PROFILE=prod ts-node -r tsconfig-paths/register src/main.ts",
+		"prestart": "yarn build && gulp",
+		"start": "PROFILE=prod node dist/main.js",
 		"start:dev": "PROFILE=local tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
 		"start:dev-windows": "cross-env PROFILE=local tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
 		"start:debug": "PROFILE=local tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",
@@ -61,7 +61,6 @@
 		"cross-env": "^7.0.0",
 		"dotenv": "^8.2.0",
 		"gulp": "^4.0.2",
-		"gulp-clean": "^0.4.0",
 		"gulp-uglify": "^3.0.2",
 		"gulp-uglifycss": "^1.1.0",
 		"jest": "25.1.0",

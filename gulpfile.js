@@ -1,11 +1,7 @@
 const gulp = require('gulp');
 const gulpUglify = require('gulp-uglify');
 const gulpUglifyCss = require('gulp-uglifycss');
-const gulpClean = require('gulp-clean');
 const pipeline = require('readable-stream').pipeline;
-
-const clean = () =>
-	gulp.src('dist/public', { read: false, allowEmpty: true }).pipe(gulpClean());
 
 const copy = () => gulp.src(['public/**/*']).pipe(gulp.dest('dist/public'));
 
@@ -27,4 +23,4 @@ const uglifyStyles = () =>
 		)
 		.pipe(gulp.dest('./dist/public/css'));
 
-exports.default = gulp.series(clean, copy, uglifyScripts, uglifyStyles);
+exports.default = gulp.series(copy, uglifyScripts, uglifyStyles);
