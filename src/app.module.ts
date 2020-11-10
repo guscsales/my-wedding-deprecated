@@ -27,7 +27,10 @@ const {
 			migrations: [`${__dirname}/migrations/*.ts`]
 		}),
 		ServeStaticModule.forRoot({
-			rootPath: path.join(__dirname, '..', 'public')
+			rootPath:
+				process.env.PROFILE !== 'local'
+					? path.join(__dirname, '..', 'public')
+					: path.join(__dirname, '..', 'dist', 'public')
 		}),
 		GuestModule,
 		Logger
