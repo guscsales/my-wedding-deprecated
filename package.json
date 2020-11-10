@@ -7,7 +7,7 @@
 	"scripts": {
 		"build": "PROFILE=prod rimraf dist && tsc -p tsconfig.build.json",
 		"format": "prettier --write \"src/**/*.ts\"",
-		"prestart": "yarn install && yarn build && gulp",
+		"prestart": "yarn build && gulp",
 		"start": "PROFILE=prod node dist/main.js",
 		"start:dev": "PROFILE=local tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
 		"start:dev-windows": "cross-env PROFILE=local tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
