@@ -8,7 +8,7 @@
 		"build": "PROFILE=prod rimraf dist && tsc -p tsconfig.build.json",
 		"format": "prettier --write \"src/**/*.ts\"",
 		"prestart": "gulp",
-		"start": "PROFILE=local ts-node -r tsconfig-paths/register src/main.ts",
+		"start": "PROFILE=prod ts-node -r tsconfig-paths/register src/main.ts",
 		"start:dev": "PROFILE=local tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
 		"start:dev-windows": "cross-env PROFILE=local tsc-watch -p tsconfig.build.json --onSuccess \"node dist/main.js\"",
 		"start:debug": "PROFILE=local tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/main.js\"",

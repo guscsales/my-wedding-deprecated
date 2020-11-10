@@ -28,7 +28,7 @@ const {
 		}),
 		ServeStaticModule.forRoot({
 			rootPath:
-				process.env.PROFILE !== 'local'
+				process.env.PROFILE !== 'prod'
 					? path.join(__dirname, '..', 'public')
 					: path.join(__dirname, '..', 'dist', 'public')
 		}),
