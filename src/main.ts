@@ -21,6 +21,13 @@ async function bootstrap() {
 		})
 	);
 	app.use((req, res, next) => {
+		if (
+			process.env.PROFILE === 'prod' &&
+			req.headers['x-forwarded-proto'] !== 'https'
+		) {
+			res.redirect('https://' + req.headers.host + req.url);
+		}
+
 		if (req.url.indexOf('/api') !== -1) {
 			const weddingApiKey = req.headers['x-api-key'];
 			const { WEDDING_API_KEY } = process.env;
