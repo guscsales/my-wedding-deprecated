@@ -28,6 +28,14 @@ async function bootstrap() {
 			res.redirect('https://' + req.headers.host + req.url);
 		}
 
+		if (req.path.indexOf('magalu') !== -1) {
+			res.redirect(
+				'https://www.querodecasamento.com.br/lista-de-casamento/gustavo-helena/'
+			);
+		} else if (req.path.indexOf('camicado') !== -1) {
+			res.redirect('https://lista.camicado.com.br/helegus');
+		}
+
 		if (req.url.indexOf('/api') !== -1) {
 			const weddingApiKey = req.headers['x-api-key'];
 			const { WEDDING_API_KEY } = process.env;
