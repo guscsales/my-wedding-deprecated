@@ -30,7 +30,7 @@ async function bootstrap() {
 
 		if (req.path.indexOf('magalu') !== -1) {
 			res.redirect(
-				'https://www.querodecasamento.com.br/lista-de-casamento/gustavo-helena/'
+				'https://www.querodecasamento.com.br/lista-de-casamento/helena-gustavo/'
 			);
 		} else if (req.path.indexOf('camicado') !== -1) {
 			res.redirect('https://lista.camicado.com.br/helegus');
